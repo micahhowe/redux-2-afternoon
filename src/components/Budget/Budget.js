@@ -11,9 +11,11 @@ import {connect} from 'react-redux'
 import { requestUserData } from './../../ducks/userReducer'
 import { requestBudgetData, addPurchase, removePurchase } from './../../ducks/budgetReducer'
 
+//since we are passing values from prop those all need to be imported at the top and passed down on "component"
 
 class Budget extends Component {
   componentDidMount(){
+    //both of these action BUILDER are defined in separate files but allowed here because of the combineReducers in store
     this.props.requestUserData()
     this.props.requestBudgetData()
   }
